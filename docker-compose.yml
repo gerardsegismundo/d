@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  task-manager:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: task-manager-cli
+    volumes:
+      - ./tasks.json:/app/tasks.json
+    stdin_open: true
+    tty: true
+    environment:
+      - PYTHONUNBUFFERED=1
